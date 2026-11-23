@@ -1,0 +1,34 @@
+MyPay BD চালু করার সহজ নিয়ম
+
+১) ZIP ফাইল Extract করুন।
+২) কম্পিউটারে Flutter SDK ও Android Studio ইনস্টল করুন।
+৩) Project folder-এ Terminal খুলে লিখুন:
+   flutter create .
+   flutter pub get
+৪) Firebase Console-এ project খুলে Android app যোগ করুন।
+৫) google-services.json ফাইল android/app/ ফোল্ডারে রাখুন।
+৬) Firebase Authentication থেকে Phone sign-in চালু করুন।
+৭) Firebase-এর Android setup guide অনুযায়ী Google Services Gradle plugin configure করুন।
+৮) চালান: flutter run
+৯) APK বানান: flutter build apk --release
+
+APK পাবেন:
+build/app/outputs/flutter-apk/app-release.apk
+
+মনে রাখবেন:
+- Firebase setup না করলে আসল SMS OTP আসবে না।
+- Send Money/Cash Out এখনো demo; বাস্তবে টাকা পাঠায় না।
+- আসল লেনদেনের জন্য অনুমোদিত payment provider এবং secure backend দরকার।
+- এই ZIP-এ APK নেই; এটি source code project।
+
+
+কম্পিউটার ছাড়া GitHub দিয়ে APK বানানোর উপায়:
+১) Chrome থেকে github.com খুলে account তৈরি/login করুন।
+২) New private repository তৈরি করুন: mypay-bd
+৩) ZIP Extract করে সব ফাইল repository-তে upload করুন; .github folder-টিও দিতে হবে।
+৪) Repository-এর Actions tab খুলুন।
+৫) Build MyPay BD APK workflow বেছে Run workflow চাপুন।
+৬) Build সফল হলে run-এর নিচে Artifacts থেকে mypay-bd-apk download করুন।
+৭) Download করা artifact ZIP extract করে app-release.apk ইনস্টল করুন।
+
+এই APK demo preview। Firebase config ছাড়া SMS OTP চলবে না এবং বাস্তব টাকা লেনদেন হবে না।
